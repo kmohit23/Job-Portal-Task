@@ -28,7 +28,7 @@ const register = async (req, res) => {
     //Generate JWT token
     const token = jwt.sign(
       {
-        userid: user.id,
+        userId: user._id,
         role: user.role,
       },
       process.env.JWT_SECRET
@@ -39,7 +39,7 @@ const register = async (req, res) => {
       message: "User registered successfully",
       token,
       user: {
-        id: user.id,
+        id: user._id,
         name: user.name,
         email: user.email,
         role: user.role,
