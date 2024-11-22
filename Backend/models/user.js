@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const bcrypt = require("bcrypt");
 
 const userSchema = new Schema(
   {
@@ -23,6 +24,20 @@ const userSchema = new Schema(
   },
   { timestamps: true }
 );
+
+userSchema.pre("save", function (next) {
+  const user = this;
+  if (!user.isModified("password")) return;
+  const saltRounds = 10;
+  bcrypt.hash(user.password, saltRounds, (err, hashedPassword) => {
+    if (err) {
+      console.error("Error hashing the password", err);
+    } else {
+      user.password = hashedPassword;
+    }
+    next();
+  });
+});
 
 const User = model("user", userSchema);
 
