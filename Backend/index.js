@@ -1,6 +1,13 @@
 const express = require("express");
 
+const connectDB = require("./config/database");
+
 const app = express();
 const PORT = 8000;
 
-app.listen(PORT, () => console.log(`Serveer runing at port : ${PORT}`));
+//Connect to Database
+connectDB();
+
+app.listen(PORT, () => console.log(`Server running at port : ${PORT}`));
+
+module.exports = app;
