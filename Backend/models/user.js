@@ -25,6 +25,7 @@ const userSchema = new Schema(
   { timestamps: true }
 );
 
+//Hash the password before saving in db
 userSchema.pre("save", function (next) {
   const user = this;
   if (!user.isModified("password")) return;
@@ -38,6 +39,12 @@ userSchema.pre("save", function (next) {
     next();
   });
 });
+
+//Method to comparePassword
+
+userSchema.methods.comparePassword = async function (userPassword) {
+  return bcrypt.compare(userPassword, this.password);
+};
 
 const User = model("user", userSchema);
 
