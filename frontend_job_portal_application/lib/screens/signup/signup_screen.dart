@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_job_portal_application/screens/signup/signup_controller.dart';
-import 'package:frontend_job_portal_application/state/enums/user_role.dart';
-import 'package:frontend_job_portal_application/widgets/app_textfield.dart';
-import 'package:frontend_job_portal_application/widgets/gap.dart';
-import 'package:frontend_job_portal_application/widgets/or_text_divider.dart';
-import 'package:frontend_job_portal_application/extensions/extensions_export.dart';
+import 'package:ar_job_portal/screens/signup/signup_controller.dart';
+import 'package:ar_job_portal/state/enums/user_role.dart';
+import 'package:ar_job_portal/widgets/app_textfield.dart';
+import 'package:ar_job_portal/widgets/gap.dart';
+import 'package:ar_job_portal/widgets/or_text_divider.dart';
+import 'package:ar_job_portal/extensions/extensions_export.dart';
 
 import 'package:get/get.dart';
 

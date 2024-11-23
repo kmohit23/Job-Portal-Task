@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:frontend_job_portal_application/http/http_service.dart';
-import 'package:frontend_job_portal_application/extensions/extensions_export.dart';
+import 'package:ar_job_portal/http/http_service.dart';
+import 'package:ar_job_portal/extensions/extensions_export.dart';
 import 'package:http/http.dart' as http;
 
 class CandidateHttpService {

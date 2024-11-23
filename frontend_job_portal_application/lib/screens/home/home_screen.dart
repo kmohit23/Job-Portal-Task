@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_job_portal_application/screens/home/home_controller.dart';
+import 'package:ar_job_portal/screens/home/home_controller.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends GetView<HomeController> {

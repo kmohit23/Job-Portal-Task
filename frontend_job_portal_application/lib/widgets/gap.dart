@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_job_portal_application/state/enums/gap_types.dart';
+import 'package:ar_job_portal/state/enums/gap_types.dart';
 
 class Gap extends StatelessWidget {
   const Gap({

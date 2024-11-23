@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_job_portal_application/styles/app_colors.dart';
+import 'package:ar_job_portal/styles/app_colors.dart';
 
 class AppThemeColors extends ThemeExtension<AppThemeColors> {
   AppThemeColors({

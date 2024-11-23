@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_job_portal_application/state/enums/button_types.dart';
-import 'package:frontend_job_portal_application/styles/app_colors.dart';
+import 'package:ar_job_portal/state/enums/button_types.dart';
+import 'package:ar_job_portal/styles/app_colors.dart';
 import 'package:get/route_manager.dart';
-import 'package:frontend_job_portal_application/extensions/extensions_export.dart';
+import 'package:ar_job_portal/extensions/extensions_export.dart';
 
 class AppButton extends StatelessWidget {
   const AppButton({

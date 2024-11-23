@@ -1,9 +1,9 @@
+import 'package:ar_job_portal/routes/app_pages.dart';
+import 'package:ar_job_portal/routes/app_routes.dart';
+import 'package:ar_job_portal/styles/app_theme.dart';
+import 'package:ar_job_portal/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:frontend_job_portal_application/routes/app_pages.dart';
-import 'package:frontend_job_portal_application/routes/app_routes.dart';
-import 'package:frontend_job_portal_application/styles/app_theme.dart';
-import 'package:frontend_job_portal_application/utils/constants.dart';
 import 'package:get/get.dart';
 
 void main() async {

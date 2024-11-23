@@ -1,4 +1,4 @@
-import 'package:frontend_job_portal_application/state/enums/user_role.dart';
+import 'package:ar_job_portal/state/enums/user_role.dart';
 
 class UserModel {
   UserModel({

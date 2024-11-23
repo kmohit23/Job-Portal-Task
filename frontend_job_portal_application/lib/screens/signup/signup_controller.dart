@@ -1,12 +1,12 @@
 import 'dart:convert';
 
 import 'package:flutter/widgets.dart';
-import 'package:frontend_job_portal_application/http/user_http_service.dart';
-import 'package:frontend_job_portal_application/routes/app_pages.dart';
-import 'package:frontend_job_portal_application/state/enums/user_role.dart';
+import 'package:ar_job_portal/http/user_http_service.dart';
+import 'package:ar_job_portal/routes/app_pages.dart';
+import 'package:ar_job_portal/state/enums/user_role.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'package:frontend_job_portal_application/extensions/extensions_export.dart';
+import 'package:ar_job_portal/extensions/extensions_export.dart';
 
 class SignupController extends GetxController {
   final nameController = TextEditingController();

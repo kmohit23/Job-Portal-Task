@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_job_portal_application/extensions/extensions_export.dart';
+import 'package:ar_job_portal/extensions/extensions_export.dart';
 
 extension SizeExtension on BuildContext {
   ///Retrieves the full screen-height of the current context.

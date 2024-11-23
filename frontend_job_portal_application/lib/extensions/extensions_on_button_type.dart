@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_job_portal_application/state/enums/button_types.dart';
-import 'package:frontend_job_portal_application/widgets/app_button.dart';
-import 'package:frontend_job_portal_application/widgets/gap.dart';
+import 'package:ar_job_portal/state/enums/button_types.dart';
+import 'package:ar_job_portal/widgets/app_button.dart';
+import 'package:ar_job_portal/widgets/gap.dart';
 import 'package:get/get.dart';
-import 'package:frontend_job_portal_application/extensions/extensions_export.dart';
+import 'package:ar_job_portal/extensions/extensions_export.dart';
 
 extension AppButtonGenerationX on ButtonType {
   /// Builds an AppButton with respect to its type

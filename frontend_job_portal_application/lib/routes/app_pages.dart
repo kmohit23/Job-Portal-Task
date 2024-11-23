@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_job_portal_application/screens/home/home_bindings.dart';
-import 'package:frontend_job_portal_application/screens/home/home_screen.dart';
-import 'package:frontend_job_portal_application/screens/login/login_bindings.dart';
-import 'package:frontend_job_portal_application/screens/login/login_screen.dart';
-import 'package:frontend_job_portal_application/screens/signup/signup_bindings.dart';
-import 'package:frontend_job_portal_application/screens/signup/signup_screen.dart';
-import 'package:frontend_job_portal_application/screens/splash/splash_bindings.dart';
-import 'package:frontend_job_portal_application/screens/splash/splash_screen.dart';
+import 'package:ar_job_portal/screens/home/home_bindings.dart';
+import 'package:ar_job_portal/screens/home/home_screen.dart';
+import 'package:ar_job_portal/screens/login/login_bindings.dart';
+import 'package:ar_job_portal/screens/login/login_screen.dart';
+import 'package:ar_job_portal/screens/signup/signup_bindings.dart';
+import 'package:ar_job_portal/screens/signup/signup_screen.dart';
+import 'package:ar_job_portal/screens/splash/splash_bindings.dart';
+import 'package:ar_job_portal/screens/splash/splash_screen.dart';
 import 'package:get/get.dart';
 
 enum AppPages {

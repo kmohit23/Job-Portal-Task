@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_job_portal_application/styles/app_colors.dart';
-import 'package:frontend_job_portal_application/styles/app_theme_colors.dart';
-import 'package:frontend_job_portal_application/utils/ui_utils.dart';
+import 'package:ar_job_portal/styles/app_colors.dart';
+import 'package:ar_job_portal/styles/app_theme_colors.dart';
+import 'package:ar_job_portal/utils/ui_utils.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {

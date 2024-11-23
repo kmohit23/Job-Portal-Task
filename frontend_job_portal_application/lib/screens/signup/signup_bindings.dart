@@ -1,4 +1,4 @@
-import 'package:frontend_job_portal_application/screens/signup/signup_controller.dart';
+import 'package:ar_job_portal/screens/signup/signup_controller.dart';
 import 'package:get/get.dart';
 
 class SignupBinding implements Bindings {

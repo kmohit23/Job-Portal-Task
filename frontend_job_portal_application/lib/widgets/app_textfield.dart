@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_job_portal_application/state/enhanced_enums/text_field_type.dart';
-import 'package:frontend_job_portal_application/widgets/gap.dart';
-import 'package:frontend_job_portal_application/extensions/extensions_export.dart';
+import 'package:ar_job_portal/state/enhanced_enums/text_field_type.dart';
+import 'package:ar_job_portal/widgets/gap.dart';
+import 'package:ar_job_portal/extensions/extensions_export.dart';
 
 class AppTextField extends StatelessWidget {
   const AppTextField({

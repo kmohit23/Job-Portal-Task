@@ -1,3 +1,3 @@
-# frontend_job_portal_application
+# ar_job_portal
 
 A new Flutter project.

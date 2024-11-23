@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:frontend_job_portal_application/extensions/extensions_export.dart';
+import 'package:ar_job_portal/extensions/extensions_export.dart';
 
 class OrTextDivider extends StatelessWidget {
   const OrTextDivider({super.key});
