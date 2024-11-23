@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:ar_job_portal/services/secure_storage_service.dart';
 import 'package:flutter/widgets.dart';
 import 'package:ar_job_portal/http/user_http_service.dart';
 import 'package:ar_job_portal/routes/app_pages.dart';
@@ -25,9 +26,8 @@ class LoginController extends GetxController {
     if (response.isNotNull) {
       Map<String, dynamic> decodedResponse = jsonDecode(response!.body);
       if (response.statusCode == 200) {
-        //todo save token
-        //temp
         var token = decodedResponse["token"];
+        await SecureStorageService.writeSecureData('token', token);
         debugPrint('User token :: $token');
         AppPages.home.pushAfterPopAll();
       } else {
