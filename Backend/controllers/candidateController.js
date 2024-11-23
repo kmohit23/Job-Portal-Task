@@ -32,7 +32,7 @@ const createCandidate = async (req, res) => {
 
     res.status(201).json({
       message: "Candidate created successfully ",
-      candidate,
+      data: candidate,
     });
   } catch (error) {
     res.status(500).json({ message: "Server error", error: error.message });
@@ -42,7 +42,10 @@ const createCandidate = async (req, res) => {
 const getAllCandidates = async (req, res) => {
   try {
     const candidates = await Candidate.find().select("-__v");
-    res.json(candidates);
+    res.status(200).json({
+      message: "Fetched Succesfully",
+      data: candidates,
+    });
   } catch (error) {
     res.status(500).json({ message: "Server error", error: error.message });
   }
@@ -54,7 +57,10 @@ const getCandidateById = async (req, res) => {
     if (!candidate) {
       return res.status(404).json({ message: "Candidate not found" });
     }
-    res.json(candidate);
+    res.status(200).json({
+      message: "Fetched Successfully",
+      data: candidate,
+    });
   } catch (error) {
     res.status(500).json({ message: "Server error", error: error.message });
   }
