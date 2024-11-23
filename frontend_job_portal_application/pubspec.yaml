@@ -1,6 +1,6 @@
 name: frontend_job_portal_application
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
@@ -9,6 +9,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_dotenv: ^5.2.1
+  flutter_screenutil: ^5.9.3
+  get: ^4.6.6
+  google_fonts: ^6.2.1
+  http: ^1.2.2
 
 dev_dependencies:
   flutter_test:
@@ -17,3 +22,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - .env
