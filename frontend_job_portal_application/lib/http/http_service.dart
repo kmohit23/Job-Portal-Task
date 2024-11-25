@@ -40,7 +40,7 @@ class HttpService {
     http.Response response;
     try {
       response = await http.get(
-        Uri.parse('$url?$params'),
+        Uri.parse('$url:$params'),
         headers: headers,
       );
     } on SocketException catch (err) {
