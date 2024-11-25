@@ -1,6 +1,9 @@
+import 'package:ar_job_portal/screens/candidate/candidate_binding.dart';
+import 'package:ar_job_portal/screens/candidate/candidate_screen.dart';
+import 'package:ar_job_portal/screens/home/admin/home_screen.dart';
+import 'package:ar_job_portal/screens/home/user/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:ar_job_portal/screens/home/home_bindings.dart';
-import 'package:ar_job_portal/screens/home/home_screen.dart';
 import 'package:ar_job_portal/screens/login/login_bindings.dart';
 import 'package:ar_job_portal/screens/login/login_screen.dart';
 import 'package:ar_job_portal/screens/signup/signup_bindings.dart';
@@ -25,10 +28,20 @@ enum AppPages {
     page: SignupScreen(),
     bindings: SignupBinding(),
   ),
-  home(
-    routeName: '/home',
-    page: HomeScreen(),
+  adminHome(
+    routeName: '/admin-home',
+    page: AdminHomeScreen(),
     bindings: HomeBindings(),
+  ),
+  userHome(
+    routeName: '/user-home',
+    page: UserHomeScreen(),
+    bindings: HomeBindings(),
+  ),
+  candidate(
+    routeName: '/candidate-details',
+    page: CandidateScreen(),
+    bindings: CandidateBinding(),
   );
 
   const AppPages({
