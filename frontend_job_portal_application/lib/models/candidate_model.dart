@@ -22,19 +22,19 @@ class CandidateModel {
         email: json["email"],
         contact: json["contact"],
         education: json["education"],
-        jobRole: json["jobRole"],
-        profileImageURL: json["profileImageURL"],
-        resumeURL: json["resumeURL"],
+        jobRole: json["job_role"],
+        profileImageURL: json["profile_image_url"],
+        resumeURL: json["resume_url"],
       );
 
-  Map<String, dynamic> toJson() => {
+  Map<String, String> toJson() => {
         "name": name,
         "email": email,
         "contact": contact,
         "education": education,
-        "jobRole": jobRole,
-        "profileImageURL": profileImageURL,
-        "resumeURL": resumeURL,
+        "job_role": jobRole,
+        "profile_image_url": profileImageURL,
+        "resume_url": resumeURL,
       };
 
   CandidateModel copyWith({

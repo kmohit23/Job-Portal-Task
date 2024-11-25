@@ -1,5 +1,7 @@
 import 'package:ar_job_portal/routes/app_pages.dart';
 import 'package:ar_job_portal/routes/app_routes.dart';
+import 'package:ar_job_portal/services/candidate_service.dart';
+import 'package:ar_job_portal/services/user_service.dart';
 import 'package:ar_job_portal/styles/app_theme.dart';
 import 'package:ar_job_portal/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +10,8 @@ import 'package:get/get.dart';
 
 void main() async {
   await dotenv.load();
+  await Get.putAsync<UserService>(() => UserService().init());
+  await Get.putAsync<CandidateService>(() => CandidateService().init());
   runApp(const JobPortalApp());
 }
 

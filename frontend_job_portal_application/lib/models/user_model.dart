@@ -14,12 +14,12 @@ class UserModel {
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
         name: json["name"],
         email: json["email"],
-        role: json["role"],
+        role: UserRole.fromSting(json["role"]),
       );
 
   Map<String, dynamic> toJson() => {
         "name": name,
         "email": email,
-        "role": role,
+        "role": role.name,
       };
 }
