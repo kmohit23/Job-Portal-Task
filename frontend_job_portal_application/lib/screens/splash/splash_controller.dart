@@ -1,7 +1,19 @@
+import 'dart:convert';
+
+import 'package:ar_job_portal/http/candidate_http_service.dart';
+import 'package:ar_job_portal/http/user_http_service.dart';
+import 'package:ar_job_portal/models/candidate_model.dart';
+import 'package:ar_job_portal/models/user_model.dart';
+import 'package:ar_job_portal/services/candidate_service.dart';
 import 'package:ar_job_portal/services/secure_storage_service.dart';
+import 'package:ar_job_portal/services/user_service.dart';
+import 'package:ar_job_portal/state/enums/user_role.dart';
 import 'package:flutter/material.dart';
 import 'package:ar_job_portal/routes/app_pages.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
+import 'package:http/http.dart' as http;
+import 'package:ar_job_portal/extensions/extensions_export.dart';
 
 class SplashController extends GetxController {
   @override
@@ -11,11 +23,53 @@ class SplashController extends GetxController {
   }
 
   void navigateToNextPage() async {
-    String token = await SecureStorageService.readSecureData('token');
+    String token = await SecureStorageService.readSecureData(
+        dotenv.env["AUTH_TOKEN_KEY"]!);
     if (token.isEmpty) {
       AppPages.login.pushAfterPopAll();
     } else {
-      AppPages.home.pushAfterPopAll();
+      http.Response? response = await UserHttpService.getUser(token: token);
+      if (response.isNotNull) {
+        Map<String, dynamic> decodedBody = jsonDecode(response!.body);
+        UserModel userData = UserModel.fromJson(decodedBody["data"]);
+        UserService.to.updateUser(userData);
+        http.Response? candidateResponse =
+            await CandidateHttpService.getAll(token: token);
+        if (candidateResponse.isNotNull) {
+          Map<String, dynamic> decodedBody =
+              jsonDecode(candidateResponse!.body);
+          var data = decodedBody["data"];
+          if (candidateResponse.statusCode == 200) {
+            if (data.isNotEmpty) {
+              for (var candidateData in data) {
+                CandidateModel candidate =
+                    CandidateModel.fromJson(candidateData);
+                CandidateService.to.addCandidates(candidate);
+              }
+            }
+          }
+        } else {
+          //
+        }
+        if (userData.role == UserRole.admin) {
+          AppPages.adminHome.pushAfterPopAll();
+        } else {
+          CandidateModel? candidate;
+          if (CandidateService.to.candidatesData.isNotEmpty) {
+            var result = CandidateService.to.candidatesData
+                .where((data) => data.email == userData.email)
+                .toList();
+            if (result.isNotEmpty) {
+              candidate = result.first;
+            }
+          }
+
+          if (candidate.isNotNull) {
+            CandidateService.to.updateUserCandidateDetails(candidate!);
+          }
+          AppPages.userHome.pushAfterPopAll();
+        }
+      }
     }
   }
 
