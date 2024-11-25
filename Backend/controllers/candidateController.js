@@ -1,5 +1,7 @@
 const Candidate = require("../models/candidate");
 
+const upload = require("../middlewares/multerS3Middleware");
+
 const createCandidate = async (req, res) => {
   try {
     const { name, email, contact, education, job_role } = req.body;
@@ -9,13 +11,9 @@ const createCandidate = async (req, res) => {
       return res.status(400).json({ message: "Candidate already exists" });
     }
 
-    //Upload resume if exists
     let profile_image_url = "";
-    //todo
 
-    //Upload if resume exits
     let resume_url = "";
-    //todo
 
     //Create new Candidate
     candidate = new Candidate({
